@@ -131,7 +131,7 @@
           class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"
           p:dataSource-ref="dataSource"
           p:passwordEncoder-ref="passwordEncoder"
-          p:sql="select password from users where username=?" />
+          p:sql="select password from sys_user where username=?" />
 	<!-- END jdbc authentication implements -->
 
 
