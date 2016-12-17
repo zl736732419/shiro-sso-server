@@ -1,5 +1,5 @@
 ###tomcat配置ssl访问，生成localhost.keystore步骤
-  ####通过jdk keytool工具生成数字证书，需要注意通过命令管理员打开cmd进行生成。
+####1.通过jdk keytool工具生成数字证书，需要注意通过命令管理员打开cmd进行生成。
   keytool -genkey -keystore "D:\localhost.keystore" -alias localhost -keyalg RSA
   输入密钥库口令: 123456
   再次输入新口令: 123456
@@ -23,9 +23,9 @@
         (如果和密钥库口令相同, 按回车):
   再次输入新口令: 123456
   通过上面步骤，生成生成证书到D:\ localhost.keystore；
-  ####修改tomcat conf/server.xml
+####2.修改tomcat conf/server.xml
   <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"  
        maxThreads="150" scheme="https" secure="true"  
        clientAuth="false" sslProtocol="TLS"   
-       keystoreFile="D:\localhost.keystore" keystorePass="123456"/> 
-   3.启动tomcat,访问https://localhost:8443/跳出tomcat首页
+       keystoreFile="D:\localhost.keystore" keystorePass="123456"/> 
+####3.启动tomcat,访问https://localhost:8443/跳出tomcat首页
