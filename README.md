@@ -23,9 +23,11 @@
         (如果和密钥库口令相同, 按回车):
   再次输入新口令: 123456
   通过上面步骤，生成生成证书到D:\ localhost.keystore；
+  
 ####2.修改tomcat conf/server.xml
-  <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"  
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"  
        maxThreads="150" scheme="https" secure="true"  
        clientAuth="false" sslProtocol="TLS"   
        keystoreFile="D:\localhost.keystore" keystorePass="123456"/> 
+       
 ####3.启动tomcat,访问https://localhost:8443/跳出tomcat首页
